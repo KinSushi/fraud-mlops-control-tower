@@ -1,0 +1,14 @@
+{
+  "amount_chf": 1250.0,
+  "hour": 23,
+  "customer_tenure_days": 120,
+  "channel_mobile": 1,
+  "channel_web": 0,
+  "channel_branch": 0,
+  "channel_api": 0,
+  "country_risk_score": 0.72,
+  "previous_alerts_30d": 1,
+  "velocity_1h": 8,
+  "merchant_category_risk": 0.55,
+  "source_system_risk": 0.35
+}

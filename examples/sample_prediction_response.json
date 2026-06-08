@@ -1,0 +1,6 @@
+{
+  "risk_score": 0.63,
+  "is_anomaly": true,
+  "threshold": 0.5,
+  "model_version": "local-artifact"
+}
