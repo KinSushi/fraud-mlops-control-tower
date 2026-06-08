@@ -1,4 +1,4 @@
-# fraud-mlops-control-tower
+﻿# fraud-mlops-control-tower
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 
 **Synthetic risk/anomaly analytics project with MLOps, monitored serving and model governance**
 
-Python · scikit-learn · MLflow · FastAPI · Docker · CI/CD · Model Card · Data Card
+Python Â· scikit-learn Â· MLflow Â· FastAPI Â· Docker Â· CI/CD Â· Model Card Â· Data Card
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat&logo=scikitlearn&logoColor=white)
@@ -113,23 +113,23 @@ make mlflow-ui
 
 ```text
 fraud-mlops-control-tower/
-├── README.md
-├── PORTFOLIO.md
-├── Dockerfile
-├── docker-compose.yml
-├── pyproject.toml
-├── Makefile
-├── .env.example
-├── .github/workflows/ci.yml
-├── assets/fraud-mlops-banner.svg
-├── data/
-├── examples/
-├── notebooks/
-├── src/fraud_mlops/
-├── tests/
-├── docs/
-├── artifacts/
-└── reports/
+â”œâ”€â”€ README.md
+â”œâ”€â”€ PORTFOLIO.md
+â”œâ”€â”€ Dockerfile
+â”œâ”€â”€ docker-compose.yml
+â”œâ”€â”€ pyproject.toml
+â”œâ”€â”€ Makefile
+â”œâ”€â”€ .env.example
+â”œâ”€â”€ .github/workflows/ci.yml
+â”œâ”€â”€ assets/fraud-mlops-banner.svg
+â”œâ”€â”€ data/
+â”œâ”€â”€ examples/
+â”œâ”€â”€ notebooks/
+â”œâ”€â”€ src/fraud_mlops/
+â”œâ”€â”€ tests/
+â”œâ”€â”€ docs/
+â”œâ”€â”€ artifacts/
+â””â”€â”€ reports/
 ```
 
 ---
@@ -176,3 +176,15 @@ This project is not:
 ## Portfolio signal
 
 This repository proves the ability to move from synthetic data to model training, evaluation, API serving, monitoring and governance documentation.
+---
+
+## Portfolio layer
+
+This repository is part of the KinSushi public technical portfolio.
+
+| Layer | Evidence |
+|---|---|
+| MLOps | synthetic risk model, MLflow, FastAPI, Docker, model card and data card |
+
+Detailed cross-repository context: [docs/PORTFOLIO_LAYER.md](docs/PORTFOLIO_LAYER.md)
+
