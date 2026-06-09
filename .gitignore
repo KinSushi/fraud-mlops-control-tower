@@ -18,6 +18,8 @@ artifacts/*.json
 reports/*.json
 reports/*.csv
 mlruns/
+mlflow.db
+*.db
 output/
 
 # Archives / transfer artifacts
