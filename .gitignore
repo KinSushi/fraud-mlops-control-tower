@@ -4,9 +4,12 @@ venv/
 env/
 __pycache__/
 *.py[cod]
+*.pyc
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+*.egg-info/
+src/*.egg-info/
 
 data/*.csv
 artifacts/*.pkl
@@ -16,6 +19,9 @@ reports/*.json
 reports/*.csv
 mlruns/
 output/
+
+# Archives / transfer artifacts
+*.zip
 
 *.log
 .DS_Store
