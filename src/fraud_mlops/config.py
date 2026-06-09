@@ -26,7 +26,10 @@ class Settings(BaseSettings):
         validation_alias="FRAUD_MLOPS_METRICS_PATH",
     )
     threshold: float = Field(default=0.50, validation_alias="FRAUD_MLOPS_THRESHOLD")
-    mlflow_tracking_uri: str = Field(default="mlruns", validation_alias="MLFLOW_TRACKING_URI")
+    mlflow_tracking_uri: str = Field(
+        default="sqlite:///mlflow.db",
+        validation_alias="MLFLOW_TRACKING_URI",
+    )
 
 
 def load_settings() -> Settings:
