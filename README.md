@@ -1,4 +1,4 @@
-﻿# fraud-mlops-control-tower
+# fraud-mlops-control-tower
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 
 **Synthetic risk/anomaly analytics project with MLOps, monitored serving and model governance**
 
-Python Â· scikit-learn Â· MLflow Â· FastAPI Â· Docker Â· CI/CD Â· Model Card Â· Data Card
+Python / scikit-learn / MLflow / FastAPI / Docker / CI/CD / Model Card / Data Card
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat&logo=scikitlearn&logoColor=white)
@@ -27,7 +27,7 @@ Python Â· scikit-learn Â· MLflow Â· FastAPI Â· Docker Â· CI/CD Â· Mo
 `fraud-mlops-control-tower` is a public MLOps portfolio project demonstrating a full synthetic model lifecycle for risk/anomaly analytics:
 
 ```text
-synthetic risk events -> features -> model training -> evaluation -> MLflow tracking -> FastAPI serving -> monitoring plan -> governance docs
+synthetic risk events -> features -> training -> threshold tuning -> evaluation -> MLflow tracking -> FastAPI serving -> governance docs
 ```
 
 The project is designed for regulated and data-intensive environments: banking, insurance, health insurance, reinsurance, pharma/medtech, fintech, consulting and big-tech data platforms.
@@ -57,15 +57,16 @@ flowchart LR
     B --> C[Feature engineering]
     C --> D[Train / test split]
     D --> E[Model training]
-    E --> F[Evaluation metrics]
-    E --> G[MLflow tracking]
-    E --> H[model.pkl artifact]
-    H --> I[FastAPI service]
-    F --> J[Model card]
-    B --> K[Data card]
-    I --> L[Monitoring plan]
-    J --> M[Risk assessment]
-    K --> M
+    E --> F[Threshold tuning]
+    F --> G[Evaluation metrics]
+    E --> H[MLflow tracking]
+    E --> I[model.pkl artifact]
+    I --> J[FastAPI service]
+    G --> K[Model card]
+    B --> L[Data card]
+    J --> M[Monitoring plan]
+    K --> N[Risk assessment]
+    L --> N
 ```
 
 ---
@@ -113,28 +114,28 @@ make mlflow-ui
 
 ```text
 fraud-mlops-control-tower/
-â”œâ”€â”€ README.md
-â”œâ”€â”€ PORTFOLIO.md
-â”œâ”€â”€ Dockerfile
-â”œâ”€â”€ docker-compose.yml
-â”œâ”€â”€ pyproject.toml
-â”œâ”€â”€ Makefile
-â”œâ”€â”€ .env.example
-â”œâ”€â”€ .github/workflows/ci.yml
-â”œâ”€â”€ assets/fraud-mlops-banner.svg
-â”œâ”€â”€ data/
-â”œâ”€â”€ examples/
-â”œâ”€â”€ notebooks/
-â”œâ”€â”€ src/fraud_mlops/
-â”œâ”€â”€ tests/
-â”œâ”€â”€ docs/
-â”œâ”€â”€ artifacts/
-â””â”€â”€ reports/
+|-- README.md
+|-- PORTFOLIO.md
+|-- Dockerfile
+|-- docker-compose.yml
+|-- pyproject.toml
+|-- Makefile
+|-- .env.example
+|-- .github/workflows/
+|-- assets/fraud-mlops-banner.svg
+|-- data/
+|-- examples/
+|-- notebooks/
+|-- src/fraud_mlops/
+|-- tests/
+|-- docs/
+|-- artifacts/
+`-- reports/
 ```
 
 ---
 
-## Metrics
+## Metrics and threshold policy
 
 This project does not optimize for accuracy alone. It reports metrics appropriate for imbalanced risk/anomaly problems:
 
@@ -146,6 +147,26 @@ This project does not optimize for accuracy alone. It reports metrics appropriat
 | PR-AUC | better for imbalanced labels |
 | ROC-AUC | general ranking quality |
 | Confusion matrix | operational error analysis |
+
+Training uses validation-set threshold tuning by default:
+
+```text
+selected threshold = argmax(F1) on validation probabilities
+```
+
+This demonstrates that the lifecycle does not rely blindly on an arbitrary `0.50` threshold. Details are documented in [docs/threshold_policy.md](docs/threshold_policy.md).
+
+---
+
+## Validation evidence
+
+Generated validation artifacts are available in:
+
+- [docs/local_run_report.md](docs/local_run_report.md)
+- [docs/screenshots.md](docs/screenshots.md)
+- [docs/VALIDATION.md](docs/VALIDATION.md)
+
+The validation path covers installation, compilation, tests, linting, synthetic data generation, import checks and small-model training.
 
 ---
 
@@ -167,7 +188,7 @@ This project is not:
 
 - a real fraud engine;
 - a production risk system;
-- a credit/insurance/health decisioning system;
+- a credit, insurance or health decisioning system;
 - a model validated for real-world operations;
 - a job application dossier.
 
@@ -175,7 +196,8 @@ This project is not:
 
 ## Portfolio signal
 
-This repository proves the ability to move from synthetic data to model training, evaluation, API serving, monitoring and governance documentation.
+This repository proves the ability to move from synthetic data to model training, threshold selection, evaluation, API serving, monitoring and governance documentation.
+
 ---
 
 ## Portfolio layer
@@ -187,4 +209,3 @@ This repository is part of the KinSushi public technical portfolio.
 | MLOps | synthetic risk model, MLflow, FastAPI, Docker, model card and data card |
 
 Detailed cross-repository context: [docs/PORTFOLIO_LAYER.md](docs/PORTFOLIO_LAYER.md)
-
