@@ -1,15 +1,6 @@
-# Screenshots
+# Screenshots and content previews
 
-Screenshots should be added after local execution.
+Generated from real repository validation commands in GitHub Actions.
 
-Expected screenshots:
-
-1. MLflow run overview.
-2. FastAPI `/docs`.
-3. Prediction payload and response.
-4. CI passing.
-5. Docker container running.
-
-## Public-safety rule
-
-Screenshots must not include private hostnames, IPs, tokens, emails, real data or employer-specific material.
+- [validation-preview.svg](screenshots/validation-preview.svg)
+- [validation-output.html](screenshots/validation-output.html)
