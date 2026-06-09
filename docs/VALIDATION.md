@@ -4,6 +4,8 @@
 
 This file documents the local and CI validation path for this repository.
 
+---
+
 ## Static validation
 
 ```powershell
@@ -11,6 +13,8 @@ python -m compileall -q src tests
 python -m pytest -q --maxfail=1
 python -m ruff check .
 ```
+
+---
 
 ## MLOps execution checks
 
@@ -20,12 +24,26 @@ python -m fraud_mlops.train --data data/synthetic_risk_events.csv --model artifa
 python -m fraud_mlops.evaluate --data data/synthetic_risk_events.csv --model artifacts/model.pkl --metrics reports/evaluation.json
 ```
 
-Optional local services:
+Training uses validation-set threshold tuning by default. A manual threshold can be supplied with `--threshold`.
+
+---
+
+## Optional local services
 
 ```powershell
 python -m uvicorn fraud_mlops.api:app --host 127.0.0.1 --port 8000
-python -m mlflow ui --backend-store-uri mlruns --host 127.0.0.1 --port 5000
+python -m mlflow ui --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5000
 ```
+
+The default tracking backend is SQLite:
+
+```text
+MLFLOW_TRACKING_URI=sqlite:///mlflow.db
+```
+
+Local SQLite artifacts are ignored by Git.
+
+---
 
 ## Public-safety validation
 
@@ -37,9 +55,12 @@ Get-ChildItem -Recurse -File |
 
 Expected review notes:
 
-- `.env.example` may contain local placeholder names.
-- `.gitignore` and documentation may contain safety words such as `secret` or `password`.
-- Real credentials must never appear.
+- `.env.example` may contain local placeholder names;
+- `.gitignore` and documentation may contain safety words such as `secret` or `password`;
+- generated validation reports may contain public-safety keywords;
+- real credentials must never appear.
+
+---
 
 ## Portfolio rule
 
