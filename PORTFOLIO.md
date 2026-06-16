@@ -4,6 +4,16 @@
 
 Synthetic risk/anomaly analytics project demonstrating model training, evaluation, MLflow tracking, FastAPI serving, Docker packaging, monitoring plans and model governance documentation.
 
+## Recruiter-readable positioning
+
+This project is public technical evidence for MLOps, Risk / Anomaly Analytics, Model Governance and regulated-ML production roles.
+
+It demonstrates the ability to build and operate a small but complete ML control loop:
+
+```text
+synthetic risk events -> features -> training -> threshold tuning -> evaluation -> MLflow tracking -> FastAPI serving -> governance docs
+```
+
 ---
 
 ## What this repo proves
@@ -49,6 +59,16 @@ Synthetic risk/anomaly analytics project demonstrating model training, evaluatio
 ### Regulated environments
 
 > I document intended use, out-of-scope use, limitations, monitoring and human oversight through model cards, data cards and risk assessments.
+
+---
+
+## What this repo is not
+
+- Not a real fraud engine.
+- Not a production risk system.
+- Not a credit, insurance or health decisioning system.
+- Not a model validated for real-world operations.
+- Not a job application dossier.
 
 ---
 
