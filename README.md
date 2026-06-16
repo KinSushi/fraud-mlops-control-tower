@@ -291,10 +291,10 @@ Regenerate locally with `make generate && make train && make evaluate`. The exac
 
 | Role family | Why this project helps |
 |---|---|
-| Junior Data Scientist | feature engineering, imbalanced metrics, threshold analysis |
-| Junior MLOps Engineer | MLflow, FastAPI, Docker, tests, CI, runbooks |
+| Data Scientist | feature engineering, imbalanced metrics, threshold analysis |
+| MLOps Engineer | MLflow, FastAPI, Docker, tests, CI, runbooks |
 | Risk / Fraud Analytics Analyst | anomaly-style model evaluation and false-positive/false-negative thinking |
-| AI Platform Engineer Junior | model lifecycle, serving, monitoring, governance evidence |
+| AI Platform Engineer | model lifecycle, serving, monitoring, governance evidence |
 | Insurance / Claims Analytics | synthetic claims/risk-style modeling patterns |
 | Big-tech ML/data platforms | packaging, API contracts, testability and reproducibility |
 
@@ -304,20 +304,20 @@ Regenerate locally with `make generate && make train && make evaluate`. The exac
 
 ```mermaid
 flowchart LR
-    A[Synthetic risk generator] --> B[CSV dataset]
-    B --> C[Feature engineering]
-    C --> D[Train / test split]
-    D --> E[Model training]
-    E --> F[Threshold tuning]
-    F --> G[Evaluation metrics]
-    E --> H[MLflow tracking]
-    E --> I[model.pkl artifact]
-    I --> J[FastAPI service]
-    G --> K[Model card]
-    B --> L[Data card]
-    J --> M[Monitoring plan]
-    K --> N[Risk assessment]
-    L --> N
+ A[Synthetic risk generator] --> B[CSV dataset]
+ B --> C[Feature engineering]
+ C --> D[Train / test split]
+ D --> E[Model training]
+ E --> F[Threshold tuning]
+ F --> G[Evaluation metrics]
+ E --> H[MLflow tracking]
+ E --> I[model.pkl artifact]
+ I --> J[FastAPI service]
+ G --> K[Model card]
+ B --> L[Data card]
+ J --> M[Monitoring plan]
+ K --> N[Risk assessment]
+ L --> N
 ```
 
 ---
@@ -349,8 +349,8 @@ Example prediction:
 
 ```bash
 curl -X POST http://localhost:8000/predict \
-  -H "Content-Type: application/json" \
-  -d @examples/sample_prediction_payload.json
+ -H "Content-Type: application/json" \
+ -d @examples/sample_prediction_payload.json
 ```
 
 Run MLflow UI:
