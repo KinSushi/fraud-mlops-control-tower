@@ -10,6 +10,9 @@
 
 Python / scikit-learn / MLflow / FastAPI / Docker / CI/CD / Model Card / Data Card
 
+[![CI](https://github.com/KinSushi/fraud-mlops-control-tower/actions/workflows/ci.yml/badge.svg)](https://github.com/KinSushi/fraud-mlops-control-tower/actions)
+![Tests](https://img.shields.io/badge/tests-pytest-0A9396)
+![Lint](https://img.shields.io/badge/lint-ruff-orange)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat&logo=scikitlearn&logoColor=white)
 ![MLflow](https://img.shields.io/badge/MLflow-Tracking-0194E2?style=flat&logo=mlflow&logoColor=white)
@@ -33,6 +36,23 @@ synthetic risk events -> features -> training -> threshold tuning -> evaluation 
 The project is designed for regulated and data-intensive environments: banking, insurance, health insurance, reinsurance, pharma/medtech, fintech, consulting and big-tech data platforms.
 
 No real banking, insurance, health, client, employer or private data belongs here.
+
+---
+
+## Sample results (synthetic data, illustrative)
+
+The numbers below are produced by the default pipeline on **synthetic** risk events. They illustrate the evaluation discipline (imbalanced-aware metrics + tuned threshold), not real-world performance.
+
+| Metric | Value (synthetic run) |
+|---|---|
+| Selected threshold | argmax(F1) on validation |
+| Precision | reported in `reports/metrics.json` |
+| Recall | reported in `reports/metrics.json` |
+| F1 | reported in `reports/metrics.json` |
+| PR-AUC | reported in `reports/metrics.json` |
+| ROC-AUC | reported in `reports/metrics.json` |
+
+Regenerate locally with `make generate && make train && make evaluate`. The exact figures land in `reports/` and `docs/local_run_report.md` so a reviewer can reproduce them.
 
 ---
 
